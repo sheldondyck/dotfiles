@@ -1,0 +1,14 @@
+#!/bin/sh
+
+update_git() {
+  echo $1
+  cd $1
+  git pull
+  cd ..
+}
+
+update_git 'nerdtree'
+update_git 'vim-haml'
+update_git 'vim-rails'
+update_git 'vim-surround'
+update_git 'zencoding-vim'
