@@ -131,6 +131,9 @@ if has("gui_running")
   nnoremap <esc> :noh<return><esc>
 endif
 
+" show wildmenu on command line
+set wildchar=<Tab> wildmenu wildmode=full
+
 " Removes overwrite register when doing paste
 " I haven't found how to hide this function (yet)
 "function! RestoreRegister()

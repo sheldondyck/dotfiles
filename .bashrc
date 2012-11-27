@@ -36,7 +36,8 @@ alias la='ls -a'
 alias r='rails'
 alias rs='rails server'
 alias rsp='rails server -e production'
-alias rt='rspec spec'
+alias rt='bundle exec rspec spec'
+alias rguard='bundle exec guard'
 
 alias g='git'
 

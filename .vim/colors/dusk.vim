@@ -26,10 +26,10 @@ hi VertSplit	gui=NONE guifg=Grey guibg=Grey
 hi Visual	gui=reverse guifg=fg guibg=LightSkyBlue4
 hi VisualNOS	gui=underline guifg=fg guibg=bg
 hi DiffText	gui=NONE guifg=Yellow guibg=LightSkyBlue4
-hi Cursor	guibg=Green guifg=Black
+hi Cursor	guibg=DarkGreen guifg=Black
 hi lCursor	guibg=Cyan guifg=Black
 hi Directory	guifg=LightGreen guibg=bg
-hi LineNr	guifg=MistyRose3 guibg=bg
+hi LineNr	guifg=#666666 guibg=#181820
 hi MoreMsg	gui=NONE guifg=SeaGreen guibg=bg
 hi NonText	gui=NONE guifg=Cyan4 guibg=#102848
 hi Question	gui=NONE guifg=LimeGreen guibg=bg
