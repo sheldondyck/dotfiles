@@ -13,4 +13,5 @@ update_git 'vim-haml'
 update_git 'vim-rails'
 update_git 'vim-surround'
 update_git 'zencoding-vim'
+# git://github.com/msanders/snipmate.vim.git
 update_git 'snipmate.vim'
