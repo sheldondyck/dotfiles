@@ -1,5 +1,6 @@
 call pathogen#infect()
 
+" basic
 behave mswin
 set nocompatible
 syntax enable
@@ -17,6 +18,14 @@ set incsearch " incremental searching
 set ignorecase " searches are case insensitive...
 set smartcase " ... unless they contain at least one capital letter
 set hls is ic scs
+set anti " antialias
+set rnu " relative line numbers
+set ofu=syntaxcomplete#Complete " omni complete
+if has("gui_macvim")
+  set guifont=Inconsolata:h16
+endif
+" set the X11 font to use
+" set guifont=-misc-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1
 colorscheme dusk
 
 "" Whitespace
@@ -24,7 +33,6 @@ set nowrap " don't wrap lines
 set tabstop=2
 set shiftwidth=2
 set expandtab " use spaces, not tabs
-set backspace=indent,eol,start " backspace through everything in insert mode "" Searching
 set bs=indent,eol,start
 
 " backup
@@ -35,9 +43,6 @@ set directory=~/.vim/tmp
 filetype on
 filetype indent on
 filetype plugin on
-
-" set the X11 font to use
-" set guifont=-misc-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1
 
 " Make shift-insert work like in Xterm
 map <S-Insert> <MiddleMouse>
@@ -53,18 +58,18 @@ set cpo&vim
 vnoremap <BS> d
 
 " CTRL-X and SHIFT-Del are Cut
-vnoremap <C-X> "+x
-vnoremap <S-Del> "+x
+vnoremap <C-X>      "+x
+vnoremap <S-Del>    "+x
 
 " CTRL-C and CTRL-Insert are Copy
-vnoremap <C-C> "+y
+vnoremap <C-C>      "+y
 vnoremap <C-Insert> "+y
 
 " CTRL-V and SHIFT-Insert are Paste
-map <C-V>     "+gP
-map <S-Insert>    "+gP
-cmap <C-V>      <C-R>+
-cmap <S-Insert>   <C-R>+
+map <C-V>           "+gP
+map <S-Insert>      "+gP
+cmap <C-V>          <C-R>+
+cmap <S-Insert>     <C-R>+
 
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
@@ -79,7 +84,7 @@ vmap <S-Insert>   <C-V>
 noremap <C-Q>   <C-V>
 
 " Use CTRL-S for saving, also in Insert mode
-noremap <C-S>   :update<CR>
+noremap <C-S>     :update<CR>
 vnoremap <C-S>    <C-C>:update<CR>
 inoremap <C-S>    <C-O>:update<CR>
 
@@ -90,8 +95,8 @@ if !has("unix")
 endif
 
 " CTRL-Z is Undo; not in cmdline though
-noremap <C-Z> u
-inoremap <C-Z> <C-O>u
+noremap <C-Z>       u
+inoremap <C-Z>      <C-O>u
 
 " CTRL-Y is Redo (although not repeat); not in cmdline though
 noremap <C-Y> <C-R>
@@ -101,9 +106,9 @@ let g:use_zen_complete_tag = 1
 
 " Alt-Space is System menu
 if has("gui")
-  noremap <M-Space> :simalt ~<CR>
-  inoremap <M-Space> <C-O>:simalt ~<CR>
-  cnoremap <M-Space> <C-C>:simalt ~<CR>
+  noremap <M-Space>   :simalt ~<CR>
+  inoremap <M-Space>  <C-O>:simalt ~<CR>
+  cnoremap <M-Space>  <C-C>:simalt ~<CR>
 endif
 
 " CTRL-A is Select all
@@ -114,11 +119,11 @@ onoremap <C-A> <C-C>gggH<C-O>G
 snoremap <C-A> <C-C>gggH<C-O>G
 xnoremap <C-A> <C-C>ggVG
 
-" CTRL-Tab is Next window
-noremap <C-Tab> <C-W>w
-inoremap <C-Tab> <C-O><C-W>w
-cnoremap <C-Tab> <C-C><C-W>w
-onoremap <C-Tab> <C-C><C-W>w
+" Option-Tab is Next window
+noremap <M-Tab> <C-W>w
+inoremap <M-Tab> <C-O><C-W>w
+cnoremap <M-Tab> <C-C><C-W>w
+onoremap <M-Tab> <C-C><C-W>w
 
 " restore 'cpoptions'
 set cpo&
@@ -158,8 +163,8 @@ map <F2>      :NERDTreeToggle<CR>
 map <F4>      :execute "vimgrep /" . expand("<cword>") . "/gj **/*.rb **/*.js **/*.coffee **/*.scss" <Bar> cw<CR>
 map <F8>      :cn<CR>
 map <S-F8>    :cp<CR>
-map <F12>     :bn<CR>
-map <S-F12>   :bp<CR>
+map <C-TAB>   :bn<CR>
+map <C-S-TAB> :bp<CR>
 
 " NERDTree config
 let NERDTreeMinimalUI=1
