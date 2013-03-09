@@ -13,9 +13,9 @@ update_git() {
   fi
 }
 
-update_git 'git://github.com/kchmck/vim-coffee-script.git', 'vim-coffee-script'
 update_git 'git://github.com/scrooloose/nerdtree.git', 'nerdtree'
+update_git 'git://github.com/vim-scripts/UltiSnips.git', 'UltiSnips' 
+update_git 'git://github.com/kchmck/vim-coffee-script.git', 'vim-coffee-script'
 update_git 'git://github.com/tpope/vim-rails.git', 'vim-rails'
 update_git 'git://github.com/tpope/vim-haml.git', 'vim-haml'
 update_git 'git://github.com/tpope/vim-surround.git', 'vim-surround'
-update_git 'git://github.com/vim-scripts/UltiSnips.git', 'UltiSnips' 
