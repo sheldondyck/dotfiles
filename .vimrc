@@ -31,6 +31,8 @@ if has('gui_running')
   colorscheme dusk
 else
   set background=dark
+  let g:solarized_termcolors = &t_Co
+  let g:solarized_termtrans = 1
   colorscheme solarized
 endif
 
