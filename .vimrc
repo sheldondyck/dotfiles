@@ -26,7 +26,13 @@ if has("gui_macvim")
 endif
 " set the X11 font to use
 " set guifont=-misc-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1
-colorscheme dusk
+if has('gui_running')
+  set background=light
+  colorscheme dusk
+else
+  set background=dark
+  colorscheme solarized
+endif
 
 "" Whitespace
 set nowrap " don't wrap lines
