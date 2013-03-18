@@ -17,7 +17,7 @@ let colors_name = "dusk"
 hi Normal	                    guifg=ivory       guibg=#1f3048
 
 " Groups used in the 'highlight' and 'guicursor' options default value.
-hi ErrorMsg	    gui=NONE      guifg=Red         guibg=Linen
+hi ErrorMsg	    gui=NONE      guifg=Linen       guibg=Red
 hi IncSearch	  gui=NONE      guibg=LightGreen  guifg=Black
 hi ModeMsg	    gui=NONE      guifg=fg          guibg=bg
 hi StatusLine	  gui=NONE      guifg=DarkBlue    guibg=Grey
@@ -58,7 +58,7 @@ hi SpellCap	    gui=undercurl guisp=GoldenRod   guifg=fg guibg=bg
 hi SpellRare	  gui=undercurl guisp=Ivory       guifg=fg guibg=bg
 hi SpellLocal	  gui=undercurl guisp=SeaGreen    guifg=fg guibg=bg
 hi ToDo		      gui=NONE      guifg=DodgerBlue  guibg=bg
-hi Error	      gui=NONE      guifg=Red         guibg=Linen
+hi Error	      gui=NONE      guifg=Linen       guibg=Red
 hi Comment	    gui=NONE      guifg=SlateGrey   guibg=bg
 "hi Comment	    gui=NONE      guifg=Lavender    guibg=bg
 hi Identifier	  gui=NONE      guifg=BlanchedAlmond  guibg=bg

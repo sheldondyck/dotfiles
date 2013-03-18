@@ -7,6 +7,7 @@ syntax enable
 syntax on
 set encoding=utf-8
 set showcmd " display incomplete commands
+
 filetype plugin indent on " load file type plugins + indentation
 
 " gui
@@ -20,9 +21,10 @@ set smartcase " ... unless they contain at least one capital letter
 set hls is ic scs
 set anti " antialias
 set rnu " relative line numbers
+set laststatus=2
 set ofu=syntaxcomplete#Complete " omni complete
 if has("gui_macvim")
-  set guifont=Inconsolata:h16
+  set guifont=Inconsolata-dz:h16
 endif
 " set the X11 font to use
 " set guifont=-misc-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1
@@ -176,6 +178,30 @@ map <C-S-TAB> :bp<CR>
 
 " NERDTree config
 let NERDTreeMinimalUI=1
+
+" add vim-css-color support to scss files
+autocmd! FileType scss syntax cluster sassCssAttributes add=@cssColors
+
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi statusline guibg=DarkGreen guifg=White
+  elseif a:mode == 'r'
+    hi statusline guibg=DarkGreen guifg=White
+  else
+    hi statusline guifg=#666666 guibg=#181820
+  endif
+endfunction
+
+if has("gui_running")
+  " TODO: This creates an error in terminal mode. Only using in gui mode for now.
+  au InsertEnter * call InsertStatuslineColor(v:insertmode)
+  au InsertChange * call InsertStatuslineColor(v:insertmode)
+  au InsertLeave * hi statusline guifg=#666666 guibg=#181820
+  " default the statusline to green when entering Vim
+  hi statusline guifg=#666666 guibg=#181820
+else
+  hi statusline ctermbg=235 ctermfg=37
+endif
 
 " auto reload config
 augroup myvimrc
