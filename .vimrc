@@ -7,6 +7,7 @@ syntax enable
 syntax on
 set encoding=utf-8
 set showcmd " display incomplete commands
+set lines=50 columns=120
 
 filetype plugin indent on " load file type plugins + indentation
 
