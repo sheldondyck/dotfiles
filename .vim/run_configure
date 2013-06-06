@@ -1,10 +1,11 @@
 #!/bin/bash
 
+export CFLAGS='-O3 -fomit-frame-pointer'
+
 ./configure \
   --enable-gui=gtk2 \
   --enable-rubyinterp=yes \
   --enable-pythoninterp=yes \
-  --enable-unicode3 \
   --enable-cscope \
   --with-features=huge \
   --with-compiledby='Sheldon Van Dyck <sheldon.dyck@gmail.com>'
