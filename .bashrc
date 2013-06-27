@@ -34,7 +34,7 @@ alias ll='ls -l'
 alias la='ls -a'
      
 alias r='rails'
-alias rs='rails server'
+alias rs='rails server -b 127.0.0.1'
 alias rsd='rails server --debugger'
 alias rsp='rails server -e production'
 alias rt='bundle exec rspec spec'
@@ -54,3 +54,6 @@ alias gx='gitx --all'
 [[ -s "/home/svd/.rvm/scripts/rvm" ]] && source "/home/svd/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
