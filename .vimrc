@@ -180,6 +180,9 @@ map <C-S-TAB> :bp<CR>
 " NERDTree config
 let NERDTreeMinimalUI=1
 
+" NERDTree open buffer at same line
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
 " add vim-css-color support to scss files
 autocmd! FileType scss syntax cluster sassCssAttributes add=@cssColors
 
