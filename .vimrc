@@ -59,6 +59,12 @@ filetype plugin on
 map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
 
+" Move between window splits
+map <C-H> <C-W>h
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+
 " set the 'cpoptions' to its Vim default
 if 1  " only do this when compiled with expression evaluation
   let s:save_cpo = &cpoptions
@@ -171,7 +177,7 @@ set wildchar=<Tab> wildmenu wildmode=full
 
 " maps
 map <F2>      :NERDTreeToggle<CR>
-map <F4>      :execute "vimgrep /" . expand("<cword>") . "/gj **/*.rb **/*.js **/*.coffee **/*.scss" <Bar> cw<CR>
+map <F4>      :execute "vimgrep /" . expand("<cword>") . "/gj **/*.rb **/*.js **/*.coffee **/*.scss **/*.haml" <Bar> cw<CR>
 map <F8>      :cn<CR>
 map <S-F8>    :cp<CR>
 map <C-TAB>   :bn<CR>
