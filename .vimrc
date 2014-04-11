@@ -28,6 +28,7 @@ if has("gui_macvim")
 endif
 " set the X11 font to use
 " set guifont=-misc-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1
+  set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
 if has('gui_running')
   set background=light
   colorscheme dusk
@@ -192,26 +193,35 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'
 " add vim-css-color support to scss files
 autocmd! FileType scss syntax cluster sassCssAttributes add=@cssColors
 
-function! InsertStatuslineColor(mode)
-  if a:mode == 'i'
-    hi statusline guibg=DarkGreen guifg=White
-  elseif a:mode == 'r'
-    hi statusline guibg=DarkGreen guifg=White
-  else
-    hi statusline guifg=#666666 guibg=#181820
-  endif
-endfunction
-
-if has("gui_running")
-  " TODO: This creates an error in terminal mode. Only using in gui mode for now.
-  au InsertEnter * call InsertStatuslineColor(v:insertmode)
-  au InsertChange * call InsertStatuslineColor(v:insertmode)
-  au InsertLeave * hi statusline guifg=#666666 guibg=#181820
-  " default the statusline to green when entering Vim
-  hi statusline guifg=#666666 guibg=#181820
-else
-  hi statusline ctermbg=235 ctermfg=37
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+if has('gui_running')
+  let g:airline_powerline_fonts = 1
 endif
+
+" Homemade Statusline. Switched to airline
+"function! InsertStatuslineColor(mode)
+"  if a:mode == 'i'
+"    hi statusline guibg=DarkGreen guifg=White
+"  elseif a:mode == 'r'
+"    hi statusline guibg=DarkGreen guifg=White
+"  else
+"    hi statusline guifg=#666666 guibg=#181820
+"  endif
+"endfunction
+
+"if has("gui_running")
+"   TODO: This creates an error in terminal mode. Only using in gui mode for now.
+"  au InsertEnter * call InsertStatuslineColor(v:insertmode)
+"  au InsertChange * call InsertStatuslineColor(v:insertmode)
+"  au InsertLeave * hi statusline guifg=#666666 guibg=#181820
+"  " default the statusline to green when entering Vim
+"  hi statusline guifg=#666666 guibg=#181820
+"else
+"  hi statusline ctermbg=235 ctermfg=37
+"endif
 
 " auto reload config
 augroup myvimrc

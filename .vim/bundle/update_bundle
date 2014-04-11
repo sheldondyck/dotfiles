@@ -26,6 +26,7 @@ update_git 'git://github.com/tpope/vim-surround.git' 'vim-surround'
 update_git 'git://github.com/millermedeiros/vim-statline.git' 'vim-statline'
 update_git 'git://github.com/skammer/vim-css-color.git' 'vim-css-color'
 update_git 'git://github.com/Raimondi/delimitMate.git' 'delimitMate'
+update_git 'git://github.com/bling/vim-airline.git' 'vim-airline'
 
 update_git 'git://github.com/tpope/vim-pathogen.git' 'vim-pathogen'
 echo 'coping pathogen to autoload'
