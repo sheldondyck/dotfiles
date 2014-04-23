@@ -50,6 +50,8 @@ alias gd='git diff'
 alias go='git checkout'
 alias gk='gitk --all&'
 alias gx='gitx --all'
+alias gdelete='git rm $(git ls-files --deleted)'
+alias pheroku='g push heroku master'
 
 [[ -s "/home/svd/.rvm/scripts/rvm" ]] && source "/home/svd/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
