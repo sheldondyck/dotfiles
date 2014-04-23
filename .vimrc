@@ -24,11 +24,12 @@ set rnu " relative line numbers
 set laststatus=2
 set ofu=syntaxcomplete#Complete " omni complete
 if has("gui_macvim")
-  set guifont=Inconsolata-dz:h16
+  set guifont=Inconsolata-dz\ for\ Powerline:h16
+else
+  set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
 endif
 " set the X11 font to use
 " set guifont=-misc-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1
-  set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
 if has('gui_running')
   set background=light
   colorscheme dusk
