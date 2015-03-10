@@ -53,6 +53,8 @@ alias gx='gitx --all'
 alias gdelete='git rm $(git ls-files --deleted)'
 alias pheroku='g push heroku master'
 
+alias make='make_colour'
+
 [[ -s "/home/svd/.rvm/scripts/rvm" ]] && source "/home/svd/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
