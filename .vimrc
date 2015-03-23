@@ -25,6 +25,8 @@ set laststatus=2
 set ofu=syntaxcomplete#Complete " omni complete
 if has("gui_macvim")
   set guifont=Inconsolata-dz\ for\ Powerline:h16
+elseif has("gui_macvim")
+  set guifont=Inconsolata-dz:10
 else
   set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
 endif
