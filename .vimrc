@@ -25,8 +25,6 @@ set laststatus=2
 set ofu=syntaxcomplete#Complete " omni complete
 if has("gui_macvim")
   set guifont=Inconsolata-dz\ for\ Powerline:h16
-elseif has("gui_macvim")
-  set guifont=Inconsolata-dz:10
 else
   set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
 endif
@@ -38,6 +36,7 @@ if has('gui_running')
   set lines=50 columns=120
 else
   set background=dark
+  "set background=light
   let g:solarized_termcolors = &t_Co
   let g:solarized_termtrans = 1
   colorscheme solarized
@@ -203,6 +202,34 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 if has('gui_running')
   let g:airline_powerline_fonts = 1
 endif
+
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()"
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+"let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.whitespace = 'Ξ'
 
 " Homemade Statusline. Switched to airline
 "function! InsertStatuslineColor(mode)
