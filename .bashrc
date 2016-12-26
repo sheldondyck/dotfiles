@@ -51,7 +51,6 @@ alias go='git checkout'
 alias gk='gitk --all&'
 alias gx='gitx --all'
 alias gdelete='git rm $(git ls-files --deleted)'
-alias pheroku='g push heroku master'
 
 alias make='make_colour'
 
@@ -59,5 +58,3 @@ alias make='make_colour'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
